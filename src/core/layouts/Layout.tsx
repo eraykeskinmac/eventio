@@ -2,7 +2,7 @@ import Head from "next/head"
 import React, {FC} from "react"
 import {BlitzLayout} from "@blitzjs/next"
 
-const Layout: BlitzLayout<{title?: string; children?: React.ReactNode}> = ({title, children}) => {
+const Layout: BlitzLayout<{title?: string | undefined; children?: React.ReactNode}> = ({title, children}) => {
   return (
     <>
       <Head>
