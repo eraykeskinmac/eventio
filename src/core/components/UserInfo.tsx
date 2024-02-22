@@ -1,19 +1,19 @@
-import Link from "next/link"
-import { useCurrentUser } from "src/users/hooks/useCurrentUser"
-import logout from "src/auth/mutations/logout"
-import { useMutation } from "@blitzjs/rpc"
-import { Routes } from "@blitzjs/next"
+import Link from "next/link";
+import { useCurrentUser } from "@/features/users/hooks/useCurrentUser";
+import logout from "@/features/auth/mutations/logout";
+import { useMutation } from "@blitzjs/rpc";
+import { Routes } from "@blitzjs/next";
 
 export const UserInfo = () => {
-  const currentUser = useCurrentUser()
-  const [logoutMutation] = useMutation(logout)
+  const currentUser = useCurrentUser();
+  const [logoutMutation] = useMutation(logout);
 
   if (currentUser) {
     return (
       <>
         <button
           onClick={async () => {
-            await logoutMutation()
+            await logoutMutation();
           }}
         >
           Logout
@@ -24,7 +24,7 @@ export const UserInfo = () => {
           User role: <code>{currentUser.role}</code>
         </div>
       </>
-    )
+    );
   } else {
     return (
       <>
@@ -35,6 +35,6 @@ export const UserInfo = () => {
           <strong>Login</strong>
         </Link>
       </>
-    )
+    );
   }
-}
+};
