@@ -78,7 +78,7 @@ export function AuthenticationForm(props: PaperProps) {
   return (
     <Paper radius="md" p="xl" withBorder {...props}>
       <Text size="lg" fw={500}>
-        Welcome to Event.io, {type} with
+        Welcome to Eventio, {type} with
       </Text>
 
       <Group grow mb="md" mt="md">
